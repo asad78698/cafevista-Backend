@@ -4,7 +4,7 @@ const {contactForm, register, login} = require('../AuthControllers/authcontrolle
 
 
 // All Backend Routes
-route.post('/home', contactForm)
+route.post('/', contactForm)
 
 route.post('/register', register)
 
