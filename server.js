@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI,).then(()=>{
 
 //middlewares
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://cafevista-frontend.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
    
