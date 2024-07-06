@@ -4,7 +4,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const cors = require('cors')
 const AllRoutes = require('./Routes/allroute')
-const userModel = require('./DatabaseModels/contactusermodel')
+const ContactuserModel = require('./DatabaseModels/contactusermodel')
 
 //Mongodb Connection
 mongoose.connect(process.env.MONGODB_URI,).then(()=>{
@@ -18,8 +18,13 @@ mongoose.connect(process.env.MONGODB_URI,).then(()=>{
 
 
 //middlewares
+<<<<<<< Updated upstream:index.js
 app.use(cors({
     origin: "https://cafevista-frontend.vercel.app",
+=======
+app.use(cors({  
+    origin: "https://cafevista-frontend.vercel.app/home",
+>>>>>>> Stashed changes:server.js
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
    
