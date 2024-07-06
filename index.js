@@ -18,13 +18,8 @@ mongoose.connect(process.env.MONGODB_URI,).then(()=>{
 
 
 //middlewares
-<<<<<<< Updated upstream:index.js
 app.use(cors({
     origin: "https://cafevista-frontend.vercel.app",
-=======
-app.use(cors({  
-    origin: "https://cafevista-frontend.vercel.app/home",
->>>>>>> Stashed changes:server.js
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
    
