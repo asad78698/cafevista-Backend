@@ -106,4 +106,29 @@ const login  = async(req, res)=>{
     }
 }
 
-module.exports = {contactForm, register, login}
+
+const newsletter = async (req, res) => {
+    const{email} = req.body
+
+   checkEmail = await newsLetterModel.findOne({Email: email})
+
+   if(checkEmail){
+       return res.status(400).json({message: "Email already exist"})
+   }
+
+   try {
+    await newsLetterModel.create({
+        Email: email
+    })
+
+    res.status(200).json({message: "Subscribed to newsletter successfully"})
+    
+   } catch (error) {
+
+    console.log("Error in subscribing to newsletter", error)
+    res.status(500).json({message: "Internal Server Error"})
+    
+   }
+}
+
+module.exports = {contactForm, register, login, newsletter}
