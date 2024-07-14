@@ -1,5 +1,6 @@
 const ContactuserModel = require('../DatabaseModels/contactusermodel')
 const RegisterModel = require('../DatabaseModels/userRegisterModel')
+const newsLetterModel = require('../DatabaseModels/newsLetterModel')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
