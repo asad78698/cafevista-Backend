@@ -1,6 +1,7 @@
 const ContactuserModel = require('../DatabaseModels/contactusermodel')
 const RegisterModel = require('../DatabaseModels/userRegisterModel')
 const newsLetterModel = require('../DatabaseModels/newsLetterModel')
+const verifyCertificateModel = require('../DatabaseModels/verifyCertificate')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -107,7 +108,6 @@ const login  = async(req, res)=>{
     }
 }
 
-
 const newsletter = async (req, res) => {
     const{email} = req.body
 
@@ -132,4 +132,17 @@ const newsletter = async (req, res) => {
    }
 }
 
-module.exports = {contactForm, register, login, newsletter}
+verifyCertificate = async (req, res) => {
+    const { certificateID } = req.body;
+
+    const checkCertificate = await verifyCertificateModel.findOne({ Certificate_ID: certificateID });
+
+    if (!checkCertificate) {
+        return res.status(400).json({ message: "Invalid Certificate ID" });
+    }
+
+    res.status(200).json(checkCertificate); // Return the certificate details directly
+}
+
+
+module.exports = {contactForm, register, login, newsletter, verifyCertificate}
