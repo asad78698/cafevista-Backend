@@ -12,7 +12,7 @@ route.post('/login', login)
 
 route.post('/newsletter', newsletter)
 
-route.post('/verifycertificate', verifyCertificate)
+route.post('/verifyCertificate', verifyCertificate)
 
 
 module.exports = route
